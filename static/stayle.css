@@ -4,7 +4,8 @@ body {
     margin: 0;
     padding: 0;
     font-family: Arial, Helvetica, sans-serif;
-    background-color: #f70f0f;
+    background-color: #4340ff;
+    background-image: url(/static/banner-bg.jpg);
     color: #222;
 }
 
@@ -41,4 +42,6 @@ a {
 
 a:hover {
     text-decoration: underline;
+    color: #9199dc;
+    text-decoration:none;
 }
