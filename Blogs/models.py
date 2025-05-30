@@ -8,7 +8,7 @@ class Blog(models.Model):
     date = models.DateTimeField(auto_now_add=True)
     def __str__(self):
         
-        return self.title
+        return self.title + self.date.strftime(' %Y-%m-%d %H:%M:%S')
     
     def snippet(self):
-        return self.body[:50] + '...'
+        return self.body[:50] 

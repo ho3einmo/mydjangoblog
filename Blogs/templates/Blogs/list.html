@@ -1,17 +1,14 @@
-{% load static %}
-<http>
-  <head>
-    <title>Blog List</title>
-    <link rel="stylesheet" type="text/css" href="{% static 'stayle.css' %}">
-  </head>
-  <body>
+{% extends 'base.html' %}
+    {% block title %}
+    Blog Hub
+    {% endblock %}
+    {% block contant %}
     <h1>Blog Posts</h1>
     <ul>
       {% for post in list_of_blogs %}
-      <h2>{{post.title}}</h2>
+      <h2><a href="{% url 'Blogs:detail' slug=post.slug %}">{{post.title}}</a></h2>
       <p>{{post.snippet}}</p>
       <p>{{post.date}}</p>
       {% endfor %}
     </ul>
-  </body>
-</http>
+{% endblock %}
