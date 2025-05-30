@@ -3,10 +3,13 @@
 body {
     margin: 0;
     padding: 0;
+    font-weight: bolder;
     font-family: Arial, Helvetica, sans-serif;
-    background-color: #4340ff;
-    background-image: url(/static/banner-bg.jpg);
-    color: #222;
+    background-color: #ffffff;
+    background-image: url(banner-bg.jpg);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    color: #ffffff;
 }
 
 header {
@@ -36,12 +39,12 @@ footer {
 }
 
 a {
-    color: #0077cc;
-    text-decoration: none;
+    color: #1eff00;
+    text-decoration: underline;
 }
 
 a:hover {
-    text-decoration: underline;
-    color: #9199dc;
+    text-decoration: none;
+    color: #001aff;
     text-decoration:none;
 }

@@ -1,12 +1,12 @@
-<html>
-<head>
-    <title>Post</title>
-</head>
-<body>
+{% extends "base.html" %}
+{% block title %}
+Post
+{% endblock %}
+{% block contant %}
     <div class="container">
         <h1>Post</h1>
         {% for post in post_text %}
-        <p>{{ post.text }}</p>
+        <p><a href="{% url 'twiter:detail' slug=post.user %}">{{ post.text }}</a></p>
         {% endfor %}
     </div>
-</html>
+{% endblock %}
