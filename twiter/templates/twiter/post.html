@@ -6,7 +6,7 @@ Post
     <div class="container">
         <h1>Post</h1>
         {% for post in post_text %}
-        <p><a href="{% url 'twiter:detail' slug=post.user %}">{{ post.text }}</a></p>
+        <p><a href="{% url 'twiter:detail' slug=post.text %}">{{ post.text }}</a></p>
         {% endfor %}
     </div>
 {% endblock %}

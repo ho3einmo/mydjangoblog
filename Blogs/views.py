@@ -7,4 +7,6 @@ def list(request):
     # return HttpResponse('Hello, world!')
     return render(request,'Blogs/list.html',{'list_of_blogs': list_of_blogs})
 def detail(request, slug):
-    return HttpResponse('This is the detail page for blog: ' + slug)
+    # return HttpResponse('This is the detail page for blog: ' + slug)
+    blog = models.Blog.objects.get(slug=slug)
+    return render(request, 'Blogs/detail.html', {'blog': blog })

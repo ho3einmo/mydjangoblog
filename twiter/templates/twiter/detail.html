@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block title %}
+tweet detail
+{% endblock %}
+
+{% block contant %}
+<ul>
+<h1>{{ tweet.user }}</h1>
+<p>date: {{ tweet.created_at }}</p>
+<p>{{ tweet.text }}</p>
+</ul>
+{% endblock%}
