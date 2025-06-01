@@ -4,9 +4,10 @@
 {% block contant %}
 <div class="container">
     <h1>Sign Up</h1>
-    <form method="post" action="/accounts/">
+    <form method="post" action="{% url 'accounts:sing_up' %}">
         {{ form.as_p }}
         {% csrf_token %}
         <input type="submit" value="Sign Up" class="btn btn-primary">
     </form>
+    <p>Already have an account? <a href="{% url 'accounts:login' %}">Login</a></p>
 {%endblock %}

@@ -1,0 +1,13 @@
+{%extends 'base.html'%}
+
+{%block title%}{%trans "Logout"%}{%endblock%}
+
+{%block content%}
+<h1>{%trans "Logout"%}</h1>
+<form action="{% url 'accounts:logout' %}" method="post">
+    {% csrf_token %}
+    <button type="submit">{%trans "Logout"%}</button>
+</form>
+<p>{%trans "You have been logged out."%}</p>
+<p><a href="{% url 'accounts:login' %}">{%trans "Login again"%}</a></p>
+{%endblock%}

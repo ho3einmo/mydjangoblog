@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.contrib.auth.decorators import login_required
 from django.shortcuts import HttpResponse 
 from . import models
 # Create your views here.
@@ -10,3 +11,7 @@ def detail(request, slug):
     # return HttpResponse('This is the detail page for blog: ' + slug)
     blog = models.Blog.objects.get(slug=slug)
     return render(request, 'Blogs/detail.html', {'blog': blog })
+
+@login_required(login_url="/accounts/login/")
+def create(request):
+    return render(request, 'Blogs/create.html')

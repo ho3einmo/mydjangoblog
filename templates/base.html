@@ -8,6 +8,13 @@
     </title>
     <link rel="stylesheet" type="text/css" href="{% static 'stayle.css' %}">
   </head>
+  <nav>
+    <ul>
+      <form action="{% url 'accounts:logout' %}" method="post">
+        {% csrf_token %}
+        <button type="submit">Logout</button>
+    </ul>
+  </nav>
   <body>
     {% block contant %}
     {% endblock %}
