@@ -6,5 +6,14 @@ created
 {% block contant %}
 <ul>
 <h1>created!</h1>
+<form method="post" class="site-form" action="{% url 'Blogs:create' %}" enctype="multipart/form-data">
+    <h2>Create a new blog</h2>
+    {% if form.errors %}
+        <p class="error">Please correct the errors below.</p>
+    {% endif %}
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Create" class="btn btn-primary">
+</form>
 </ul>
 {% endblock%}
