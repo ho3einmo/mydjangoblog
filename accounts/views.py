@@ -20,6 +20,8 @@ def login(request):
             # Log the user in
             user = form.get_user()
             auth_login(request, user)
+            if 'next' in request.POST:
+                return redirect(request.POST.get('next'))
             return redirect('Blogs:list')
     else:
         form = AuthenticationForm()

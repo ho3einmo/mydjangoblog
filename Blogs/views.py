@@ -12,6 +12,6 @@ def detail(request, slug):
     blog = models.Blog.objects.get(slug=slug)
     return render(request, 'Blogs/detail.html', {'blog': blog })
 
-@login_required(login_url="/accounts/login/")
+@login_required(login_url="/accounts/login")
 def create(request):
     return render(request, 'Blogs/create.html')
