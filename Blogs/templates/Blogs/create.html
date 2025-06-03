@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load static %}
 {% block title %}
 created
 {% endblock %}
@@ -16,4 +17,6 @@ created
     <input type="submit" value="Create" class="btn btn-primary">
 </form>
 </ul>
+<script src="{% static 'slugfy.js' %}">
+</script>
 {% endblock%}

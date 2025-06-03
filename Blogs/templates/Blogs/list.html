@@ -1,14 +1,24 @@
 {% extends 'base.html' %}
-    {% block title %}
-    Blog Hub
-    {% endblock %}
-    {% block contant %}
-    <h1>Blog Posts</h1>
-    <ul>
-      {% for post in list_of_blogs %}
-      <h2><a href="{% url 'Blogs:detail' slug=post.slug %}">{{post.title}}</a></h2>
-      <p>{{post.snippet}}</p>
-      <p>{{post.date}}</p>
-      {% endfor %}
-    </ul>
+
+{% block title %}
+  Blog Hub
+{% endblock %}
+
+{% block contant %}
+  {% if user.is_authenticated %}
+    <p>Welcome, {{ user.username }}</p>
+    <a href="{% url 'Blogs:create' %}">Create a new blog post</a>
+  {% endif %}
+  <h1>Blog Posts</h1>
+  <div class="Blogs">
+    {% for post in list_of_blogs %}
+      <div class="Blog">
+        <h2>
+          <a href="{% url 'Blogs:detail' slug=post.slug %}">{{ post.title }}</a>
+        </h2>
+        <p>{{ post.snippet }}</p>
+        <p>{{ post.date }}</p>
+      </div>
+    {% endfor %}
+  </div>
 {% endblock %}

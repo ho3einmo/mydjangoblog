@@ -1,8 +1,6 @@
 /* Basic CSS Template */
 
 body {
-    margin: 0;
-    padding: 0;
     font-weight: bolder;
     font-family: Arial, Helvetica, sans-serif;
     background-color: #ffffff;
@@ -13,10 +11,117 @@ body {
 }
 
 header {
-    background: #f70404;
-    color: #fff;
-    padding: 1rem 2rem;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    padding:20px 0;
+}
+nav li{
+    display: inline-block;
+    margin-left: 20px;
+    justify-content: left;
+    gap: 20px;
+}
+nav button {
+    background: none;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.2rem;
+}
+.wrapper {
+    max-height: 960px;
+    margin: 0 auto;
+}
+div.wrapper h1{ 
+    color: #ffffff;
     text-align: center;
+    font-size: 2.4em;
+    margin: 100px auto;
+}
+.Blogs{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+}
+.Blog{
+    padding:10px;
+    border:1px solid #ffffff;
+    position:relative;
+    padding-bottom:40px;
+}
+.Blog.h2{
+    font-size: 1.5rem;
+    color: #ffffff;
+}
+.Blog_ditail{
+    padding:10px;
+    border:1px solid #00dba0;
+    position:relative;
+    padding-bottom:40px;
+}
+.Blog_ditail img{
+    width: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+    image-orientation: from-image;
+}
+.Blog_ditail h2{
+    text-align:center;
+    font-size:2em;
+}
+.Blog_ditail p{
+    font-size: 1.2rem;
+    color: #ffffff;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.site_form {
+    margin-top: 60px;
+    border: 1px solid #ffffff;
+    padding: 20px;
+}
+.site_form input,.site_form textarea {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #3002fb;
+    border-radius: 5px;
+    background-color: #fefefe;
+    color: #ffffff;
+}
+.site_form input[type="submit"] {
+    border: 0;
+    color: #ffffff;
+    background-color: #3002fb;
+    cursor: pointer;
+    font-size: 1.2rem;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+.helptext,.helptext ul {
+    color: #2b0cf3;
+    font-size: 1.2rem;
+    margin-top: 20px;
+    display: block;
+}
+.error {
+    padding: 20px;
+    color: #ff0000;
+    font-size: 1.2rem;
+    margin-top: 20px;
+}
+.error li {
+    padding: 20px;
+    list-style-type: none;
+    color: #ff0000;
+    border: 1px solid #ff0000;
+    font-size: 1.2rem;
+    margin: 10px 0;
+    display: block;
 }
 
 main {
@@ -39,7 +144,7 @@ footer {
 }
 
 a {
-    color: #1eff00;
+    color: #ffffff;
     text-decoration: underline;
 }
 

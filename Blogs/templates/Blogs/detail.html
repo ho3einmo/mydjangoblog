@@ -4,12 +4,13 @@ Blog Post
 {% endblock %}
 
 {% block contant %}
-<ul>
-<img src="{{ blog.image.url }}" alt="Blog Image" style="width: 10%; height: auto;">
+<div class="Blog_ditail"><ul>
+<img src="{{ blog.image.url }}" alt="Blog Image">
 <h1>{{ blog.title }}</h1>
 <p>{{ blog.slug }}</p>
 <p>{{ blog.body }}</p>
-<p>{{ blog.author }}</p>
+<p>created by:{{ blog.author }}</p>
 <p>date: {{ blog.date }}</p>
 </ul>
+</div>
 {% endblock%}

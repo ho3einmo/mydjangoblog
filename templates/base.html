@@ -9,15 +9,25 @@
     <link rel="stylesheet" type="text/css" href="{% static 'stayle.css' %}">
   </head>
   <body>
-    <nav>
+    <header><nav>
     <ul>
-      <form class="logout" action="{% url 'accounts:logout' %}" method="post">
-        {% csrf_token %}
-        <button type="submit">Logout</button>
-      </form>
+    {% if user.is_authenticated %}
+      <li>
+        <form class="logout" action="{% url 'accounts:logout' %}" method="post" style="display:inline;">
+          {% csrf_token %}
+          <button type="submit">Logout</button>
+        </form>
+      </li>
+      {% else %}
+      <li><a href="{% url 'accounts:login' %}">Login</a></li>
+      <li><a href="{% url 'accounts:sing_up' %}">Sign Up</a></li>
+    {% endif %}
     </ul>
-  </nav>
+    </nav>
+  </header>
+  <div class="wrapper">
     {% block contant %}
     {% endblock %}
+  </div>
     </body>
 </html>
